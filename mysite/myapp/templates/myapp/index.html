@@ -6,9 +6,9 @@
 </head>
 <body>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="text" name="name" id="name">
+        <input type="file" name="file" id="file">
         <input type="submit" name="submit" id="">
     </form>
     

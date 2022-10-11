@@ -3,4 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def hello(request):
+    if (request.method == 'POST'):
+        print(request.FILES['file'])
+    else:
+        print('This is a get request')
+    
     return render(request, 'myapp/index.html')
