@@ -6,7 +6,8 @@
 </head>
 <body>
 
-    <form>
+    <form method="post">
+        {% csrf_token %}
         <input type="text" name="name" id="name">
         <input type="submit" name="submit" id="">
     </form>
