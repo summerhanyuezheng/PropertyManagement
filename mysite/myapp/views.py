@@ -5,7 +5,8 @@ import pandas as pd
 # Create your views here.
 def hello(request):
     if (request.method == 'POST'):
-        print(request.FILES['file'])
+        file = request.FILES['file']
+        print(pd.read_csv(file))
     else:
         print('This is a get request')
     
