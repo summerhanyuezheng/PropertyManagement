@@ -9,4 +9,4 @@ class Data(models.Model):
     rent = models.IntegerField()
     emi = models.IntegerField()
     tax = models.IntegerField()
-    exp = models.IntegerField
+    exp = models.IntegerField()
