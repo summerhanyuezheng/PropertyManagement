@@ -6,7 +6,7 @@ import pandas as pd
 def hello(request):
     if (request.method == 'POST'):
         file = request.FILES['file']
-        print(pd.read_csv(file))
+        df = pd.read_csv(file)
     else:
         print('This is a get request')
     
