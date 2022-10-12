@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import pandas as pd
 import pandas.io 
 import json
+from .models import Data
 
 # Create your views here.
 def hello(request):
@@ -12,7 +13,13 @@ def hello(request):
         json_records= df.reset_index().to_json(orient='records')
         data = []
         data = json.loads(json_records)
-        print(data)
+        for d in data:
+            name = d['property_name']
+            price = d['property_price']
+            rent = d['property_rent']
+            emi = d['emi']
+            tax = d['tax']
+            exp = d['other_exp']
     else:
         print('This is a get request')
     
