@@ -23,13 +23,15 @@ def hello(request):
             emi = d['emi']
             tax = d['tax']
             exp = d['other_exp']
+            expenses_monthly = emi + tax + exp
+            income_monthly = rent - expenses_monthly
             #name = name 
             #left side is the name from models.py Data object
             #we are taking all the names from models.py
             #and storing the values into it. the values are: d['property_name']
             #dt is a Data object
             dt = Data(name=name, price=price,rent=rent,
-                    emi=emi, tax=tax,exp=exp)
+                    emi=emi, tax=tax,exp=exp,expenses_monthly=expenses_monthly,income_monthly=income_monthly)
             #save object dt into the datbase
             dt.save()
         
