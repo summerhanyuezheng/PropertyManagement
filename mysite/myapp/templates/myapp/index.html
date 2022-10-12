@@ -11,6 +11,33 @@
         <input type="file" name="file" id="file">
         <input type="submit" name="submit" id="">
     </form>
-    {{data_objects}}
+    <table>
+        <thead>
+            <tr>
+                <th>Property Name</th>
+                <th>Price</th>
+                <th>Rent</th>
+                <th>EMI</th>
+                <th>Tax</th>
+                <th>Monthly Expense</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            {% for object in data_objects %}
+            <tr>
+                <td>{{object.name}}</td>
+                <td>{{object.price}}</td>
+                <td>{{object.rent}}</td>
+                <td>{{object.emi}}</td>
+                <td>{{object.tax}}</td>
+                <td>{{object.exp}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</br>
+    
 </body>
 </html>
