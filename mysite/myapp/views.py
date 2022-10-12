@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from django.http import HttpResponse
 import pandas as pd
@@ -31,6 +32,12 @@ def hello(request):
                     emi=emi, tax=tax,exp=exp)
             #save object dt into the datbase
             dt.save()
+        
+        #extract the data from database, and store them in 'context'
+        data_objects = Data.objects.all()
+        context = {'data_objects': data_objects}
+        #will return the template html with context
+        return render(request,'myapp/index.html',context)
     else:
         print('This is a get request')
     
