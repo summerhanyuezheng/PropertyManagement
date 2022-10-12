@@ -20,6 +20,8 @@
                 <th>EMI</th>
                 <th>Tax</th>
                 <th>Monthly Expense</th>
+                <th>Net Expenses</th>
+                <th>Net Income</th>
             </tr>
 
         </thead>
@@ -32,6 +34,8 @@
                 <td>{{object.emi}}</td>
                 <td>{{object.tax}}</td>
                 <td>{{object.exp}}</td>
+                <td>{{object.expenses_monthly}}</td>
+                <td>{{object.income_monthly}}</td>
             </tr>
             {% endfor %}
         </tbody>
