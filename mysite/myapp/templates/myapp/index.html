@@ -4,40 +4,40 @@
 <head>
     
     <title>Homepage</title>
-    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}"/>
 </head>
 <body>
 
-    <form method="post" enctype="multipart/form-data">
+    <form class="bg-red-100 rounded px-8 pt-6 pb-8 mb-4" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="file" name="file" id="file">
-        <input type="submit" name="submit" id="">
+        <input class = "inline-block font-bold text-sm text-blue-500" type="file" name="file" id="file">
+        <input class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit" name="submit" id="">
     </form>
     <table>
         <thead>
             <tr>
-                <th>Property Name</th>
-                <th>Price</th>
-                <th>Rent</th>
-                <th>EMI</th>
-                <th>Tax</th>
-                <th>Monthly Expense</th>
-                <th>Net Expenses</th>
-                <th>Net Income</th>
+                <th class="px-6 py-2 text-sm text-gray-500">Property Name</th>
+                <th class="px-6 py-2 text-sm text-gray-500">Price</th>
+                <th class="px-6 py-2 text-sm text-gray-500">Rent</th>
+                <th class="px-6 py-2 text-sm text-gray-500">EMI</th>
+                <th class="px-6 py-2 text-sm text-gray-500">Tax</th>
+                <th class="px-6 py-2 text-sm text-gray-500">Monthly Expense</th>
+                <th class="px-6 py-2 text-sm text-gray-500">Net Expenses</th>
+                <th class="px-6 py-2 text-sm text-gray-500">Net Income</th>
             </tr>
 
         </thead>
         <tbody>
             {% for object in data_objects %}
             <tr>
-                <td>{{object.name}}</td>
-                <td>{{object.price}}</td>
-                <td>{{object.rent}}</td>
-                <td>{{object.emi}}</td>
-                <td>{{object.tax}}</td>
-                <td>{{object.exp}}</td>
-                <td>{{object.expenses_monthly}}</td>
-                <td>{{object.income_monthly}}</td>
+                <td class="px-6 py-4 text-sm text-gray-500 font-bold">{{object.name}}</td>
+                <td class="px-6 py-4 text-sm text-green-500">{{object.price}}</td>
+                <td class="px-6 py-4 text-sm text-green-500">{{object.rent}}</td>
+                <td class="px-6 py-4 text-sm text-red-500">{{object.emi}}</td>
+                <td class="px-6 py-4 text-sm text-red-500">{{object.tax}}</td>
+                <td class="px-6 py-4 text-sm text-red-500">{{object.exp}}</td>
+                <td class="px-6 py-4 text-sm text-red-500">{{object.expenses_monthly}}</td>
+                <td class="px-6 py-4 text-sm text-green-500">{{object.income_monthly}}</td>
             </tr>
             {% endfor %}
         </tbody>
