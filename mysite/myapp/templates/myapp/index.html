@@ -21,7 +21,7 @@
                 <th class="px-6 py-2 text-sm text-gray-500">Rent</th>
                 <th class="px-6 py-2 text-sm text-gray-500">EMI</th>
                 <th class="px-6 py-2 text-sm text-gray-500">Tax</th>
-                <th class="px-6 py-2 text-sm text-gray-500">Monthly Expense</th>
+                <th class="px-6 py-2 text-sm text-gray-500">Other Expense</th>
                 <th class="px-6 py-2 text-sm text-gray-500">Net Expenses</th>
                 <th class="px-6 py-2 text-sm text-gray-500">Net Income</th>
             </tr>
@@ -40,6 +40,16 @@
                 <td class="px-6 py-4 text-sm text-green-500">{{object.income_monthly}}</td>
             </tr>
             {% endfor %}
+            <tr>
+                <td class="px-6 py-4 text-sm text-gray-500 font-bold">Total</td>
+                <td id = "totalPrice" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                <td id = "totalRent" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                <td id = "totalEmi" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                <td id = "totalTax" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                <td id = "totalExp" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                <td id = "totalNetExp" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                <td id = "totalIncome" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+            </tr>
         </tbody>
     </table>
 
@@ -52,9 +62,10 @@
     let total_rent = 0;
     let total_emi = 0;
     let total_tax = 0;
+    let total_exp = 0;
     let total_monthly_expense = 0;
     let total_monthly_income = 0;
-    let total_exp = 0;
+    
 
     //decalre variables to hold cell value
     let net_prices;
@@ -67,7 +78,7 @@
     
 
 
-    for (let i = 1; i < table.rows.length; i++) {
+    for (let i = 1; i < table.rows.length - 1; i++) {
         //getting values from table cells
         net_prices = table.rows[i].cells[1].innerText;
         net_rent = table.rows[i].cells[2].innerText;
@@ -95,14 +106,28 @@
         total_monthly_expense += net_monthly_expense;
         total_monthly_income += net_monthly_income;
     }
+    //store the value of totals according to their id:
+    document.getElementById("totalPrice").innerHTML = total_prices;
+    document.getElementById("totalRent").innerHTML = total_rent;
+    document.getElementById("totalEmi").innerHTML = total_emi;
+    document.getElementById("totalTax").innerHTML = total_tax;
+    document.getElementById("totalPrice").innerHTML = total_prices;
+    document.getElementById("totalExp").innerHTML = total_exp;
+    document.getElementById("totalNetExp").innerHTML = total_monthly_expense;
+    document.getElementById("totalExp").innerHTML = total_exp;
+    document.getElementById("totalIncome").innerHTML = total_monthly_income;
+    
+
+
     console.log(
         total_prices, 
         total_rent,
         total_emi,
         total_tax,
+        total_exp,
         total_monthly_expense,
         total_monthly_income,
-        total_exp
+        
         
     );
 
