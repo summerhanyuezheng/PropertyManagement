@@ -79,17 +79,22 @@
                         </tr>
                     </tbody>
                 </table>
-
-
             </div>
+        </div>
+    </div>
+
+    <div class="flex gap-8 m-10">
+        <div class="w-1/2">
+            <div class="text-teal-600 font-bold">Income Chart</div>
+            <div><canvas id="myChart" width="400" height="400"></canvas></div>
 
         </div>
 
 
+
     </div>
 
-    
-    
+
 
 </br>
 <script>
@@ -113,7 +118,12 @@
     let net_exp;
     let net_monthly_expense;
     let net_monthly_income;
+    let property_name;
     
+    //declare an array for populating charts
+    let net_income_array = []
+    //an array to store all the names
+    let name_array = []
 
 
     for (let i = 1; i < table.rows.length - 1; i++) {
@@ -125,6 +135,14 @@
         net_exp = table.rows[i].cells[5].innerText;
         net_monthly_expense = table.rows[i].cells[6].innerText;
         net_monthly_income = table.rows[i].cells[7].innerText;
+        property_name = table.rows[i].cells[0].innerText;
+
+        //push net_monthly_income value into net_income_aray
+        net_income_array.push(net_monthly_income)
+        //push all the names
+        name_array.push(property_name)
+
+
         
         //Js in html treated as string, so need to be convert to int
         net_prices = parseInt(net_prices);
@@ -168,6 +186,46 @@
         
         
     );
+
+// JS code for the chart
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: name_array,
+        datasets: [{
+            label: 'Income in Dollars',
+            data: net_income_array,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+
 
 </script>  
 </body>
