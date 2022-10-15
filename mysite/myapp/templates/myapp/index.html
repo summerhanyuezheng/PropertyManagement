@@ -45,7 +45,67 @@
 
 </br>
 <script>
+    table = document.getElementById("table")
+    // loop to calculate total price and everything else
+    //declare variables to hold total
+    let total_prices = 0; 
+    let total_rent = 0;
+    let total_emi = 0;
+    let total_tax = 0;
+    let total_monthly_expense = 0;
+    let total_monthly_income = 0;
+    let total_exp = 0;
+
+    //decalre variables to hold cell value
+    let net_prices;
+    let net_rent;
+    let net_emi;
+    let net_tax;
+    let net_exp;
+    let net_monthly_expense;
+    let net_monthly_income;
     
+
+
+    for (let i = 1; i < table.rows.length; i++) {
+        //getting values from table cells
+        net_prices = table.rows[i].cells[1].innerText;
+        net_rent = table.rows[i].cells[2].innerText;
+        net_emi = table.rows[i].cells[3].innerText;
+        net_tax = table.rows[i].cells[4].innerText;
+        net_exp = table.rows[i].cells[5].innerText;
+        net_monthly_expense = table.rows[i].cells[6].innerText;
+        net_monthly_income = table.rows[i].cells[7].innerText;
+        
+        //Js in html treated as string, so need to be convert to int
+        net_prices = parseInt(net_prices);
+        net_rent = parseInt(net_rent);
+        net_emi = parseInt(net_emi);
+        net_tax = parseInt(net_tax);
+        net_exp = parseInt(net_exp);
+        net_monthly_expense = parseInt(net_monthly_expense);
+        net_monthly_income = parseInt(net_monthly_income);
+
+        //calculate the total
+        total_prices += net_prices;
+        total_rent += net_rent;
+        total_emi += net_emi;
+        total_tax += net_tax;
+        total_exp += net_exp;
+        total_monthly_expense += net_monthly_expense;
+        total_monthly_income += net_monthly_income;
+    }
+    console.log(
+        total_prices, 
+        total_rent,
+        total_emi,
+        total_tax,
+        total_monthly_expense,
+        total_monthly_income,
+        total_exp
+        
+    );
+
 </script>  
 </body>
 </html>
