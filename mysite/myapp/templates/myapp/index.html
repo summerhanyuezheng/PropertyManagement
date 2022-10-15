@@ -6,52 +6,88 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="{% static 'myapp/style.css' %}"/>
 </head>
-<body>
+<body class="bg-gray-100">
+    <nav class="bg-teal-500 py-2 md:py-4 shadow-lg">
+        <div class="container px-4 md:flex md:items-center mx-auto">
+            <a href="#" class="font-bold text-xl text-white">Welcome : )</a>
+        </div>
+    </nav>
 
-    <form class="bg-red-100 rounded px-8 pt-6 pb-8 mb-4" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input class = "inline-block font-bold text-sm text-blue-500" type="file" name="file" id="file">
-        <input class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit" name="submit" id="">
-    </form>
-    <table id="table">
-        <thead>
-            <tr>
-                <th class="px-6 py-2 text-sm text-gray-500">Property Name</th>
-                <th class="px-6 py-2 text-sm text-gray-500">Price</th>
-                <th class="px-6 py-2 text-sm text-gray-500">Rent</th>
-                <th class="px-6 py-2 text-sm text-gray-500">EMI</th>
-                <th class="px-6 py-2 text-sm text-gray-500">Tax</th>
-                <th class="px-6 py-2 text-sm text-gray-500">Other Expense</th>
-                <th class="px-6 py-2 text-sm text-gray-500">Net Expenses</th>
-                <th class="px-6 py-2 text-sm text-gray-500">Net Income</th>
-            </tr>
+    <div class="bg-teal-200 m-7 p-6">
+        <div class="text-4xl text-gray-800 font-medium">Hello There 😀</div>
+        <div class="mt-4">Upload & Visualize Data quickly with our reporting tool</div>
+    </div>
 
-        </thead>
-        <tbody>
-            {% for object in data_objects %}
-            <tr>
-                <td class="px-6 py-4 text-sm text-gray-500 font-bold">{{object.name}}</td>
-                <td class="px-6 py-4 text-sm text-green-500">{{object.price}}</td>
-                <td class="px-6 py-4 text-sm text-green-500">{{object.rent}}</td>
-                <td class="px-6 py-4 text-sm text-red-500">{{object.emi}}</td>
-                <td class="px-6 py-4 text-sm text-red-500">{{object.tax}}</td>
-                <td class="px-6 py-4 text-sm text-red-500">{{object.exp}}</td>
-                <td class="px-6 py-4 text-sm text-red-500">{{object.expenses_monthly}}</td>
-                <td class="px-6 py-4 text-sm text-green-500">{{object.income_monthly}}</td>
-            </tr>
-            {% endfor %}
-            <tr>
-                <td class="px-6 py-4 text-sm text-gray-500 font-bold">Total</td>
-                <td id = "totalPrice" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
-                <td id = "totalRent" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
-                <td id = "totalEmi" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
-                <td id = "totalTax" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
-                <td id = "totalExp" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
-                <td id = "totalNetExp" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
-                <td id = "totalIncome" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="flex">
+        <div class="w-1/2">
+            <div class="m-10 font-bold text-teal-700">Upload CSV File</div>
+            <div class="container mx-auto w-full max-w-xs">
+                <form class="bg-teal-100 rounded px-8 pt-6 pb-8 mb-4" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input class = "inline-block font-bold text-sm text-blue-500" type="file" name="file" id="file">
+                    <input class="bg-violet-400 text-white font-bold py-2 px-4 rounded" type="submit" name="submit" id="">
+                </form>
+            </div>
+        </div>
+        <div class="w-1/2"></div>
+    </div>
+
+
+    <div class="m-10 container mx-auto font-bold text-teal-700">Property Data</div>
+    <div class="container mx-auto flex justify-center">
+        <div class="flex flex-col">
+            <div class="w-full">
+                <div class="border-b border-gray-200 shadow"></div>
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th class="px-6 py-2 text-sm text-gray-500">Property Name</th>
+                            <th class="px-6 py-2 text-sm text-gray-500">Price</th>
+                            <th class="px-6 py-2 text-sm text-gray-500">Rent</th>
+                            <th class="px-6 py-2 text-sm text-gray-500">EMI</th>
+                            <th class="px-6 py-2 text-sm text-gray-500">Tax</th>
+                            <th class="px-6 py-2 text-sm text-gray-500">Other Expense</th>
+                            <th class="px-6 py-2 text-sm text-gray-500">Net Expenses</th>
+                            <th class="px-6 py-2 text-sm text-gray-500">Net Income</th>
+                        </tr>
+            
+                    </thead>
+                    <tbody>
+                        {% for object in data_objects %}
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-500 font-bold">{{object.name}}</td>
+                            <td class="px-6 py-4 text-sm text-green-500">{{object.price}}</td>
+                            <td class="px-6 py-4 text-sm text-green-500">{{object.rent}}</td>
+                            <td class="px-6 py-4 text-sm text-red-500">{{object.emi}}</td>
+                            <td class="px-6 py-4 text-sm text-red-500">{{object.tax}}</td>
+                            <td class="px-6 py-4 text-sm text-red-500">{{object.exp}}</td>
+                            <td class="px-6 py-4 text-sm text-red-500">{{object.expenses_monthly}}</td>
+                            <td class="px-6 py-4 text-sm text-green-500">{{object.income_monthly}}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-500 font-bold">Total</td>
+                            <td id = "totalPrice" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                            <td id = "totalRent" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                            <td id = "totalEmi" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                            <td id = "totalTax" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                            <td id = "totalExp" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                            <td id = "totalNetExp" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                            <td id = "totalIncome" class="px-6 py-4 text-sm text-gray-500 font-bold">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    
+    
 
 </br>
 <script>
