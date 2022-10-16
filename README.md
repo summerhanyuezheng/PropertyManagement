@@ -13,8 +13,6 @@ Then start installing the following:
 
 1. Install Virtual Environment: 
   * `pip3 install virtualenv`
-2. Insatll Django3.2:
-  * `pip install django==3.2`
 
 
 ### How to Run the Project(Mac, Terminal)
@@ -27,17 +25,17 @@ Then start installing the following:
     * `source bin/activate`
 (by now, if you see `(env)` displaying at the beginning of command line, you are on the right track :))
   
-3. Insatll Django :
-  * `pip install Django==3.2
+3. Install Django :
+   `pip install Django==3.2`
   
 4. Install Pandas:
     * `pip install pandas`
     
 5. run the server:
-   - (right now, if you are in `env` directoty, make sure to change to `mysite` directory first, then do the following)
-    * ` python manage.py runserver`
-    * then you should see a message saying: `Starting development server at http://127.0.0.1:8000/`
-    * copy the url with method `report` as `http://127.0.0.1:8000/report` and paste into a browser of your choice
+   - (right now, if you are in `env` directory, make sure to change to `mysite` directory first, then do the following)
+     * ` python manage.py runserver`
+     * then you should see a message saying: `Starting development server at http://127.0.0.1:8000/`
+     * copy the url with method `report` as `http://127.0.0.1:8000/report` and paste into a browser of your choice
 (by now, you should see the web page displaying successfully)
 
 6. upload the file named `propertySheet` in the cloned folder , click submit, all the table and charts should display with given data
