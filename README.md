@@ -36,10 +36,12 @@ Then start installing the following:
      * ` python manage.py runserver`
      * then you should see a message saying: `Starting development server at http://127.0.0.1:8000/`
      * copy the url with method `report` as `http://127.0.0.1:8000/report` and paste into a browser of your choice
-     (if google chrome does not work when you click on `choosefile` button, try to use Safari)
+     
      
 (by now, you should see the web page displaying successfully)
 
-6. upload the file named `propertySheet` in the cloned folder , click submit, all the table and charts should display with given data
+6. upload the file:
+ * upload the file named `propertySheet` in the cloned folder, click submit, all the table and charts should display with given data 
+ - (if google chrome does not work when you click on `choosefile` button, try to use Safari)
    
 
