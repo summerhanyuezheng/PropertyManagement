@@ -41,7 +41,7 @@ Then start installing the following:
 (by now, you should see the web page displaying successfully)
 
 6. upload the file:
- * upload the file named `propertySheet` in the cloned folder, click submit, all the table and charts should display with given data 
+ * upload the file named `propertySheet` in the cloned folder by dragging into the `choose File` box on the web page, click submit, all the table and charts should display with given data 
  - (if google chrome does not work when you click on `choosefile` button, try to use Safari)
    
 
