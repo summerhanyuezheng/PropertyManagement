@@ -7,7 +7,7 @@ import json
 from .models import Data
 
 # Create your views here.
-def hello(request):
+def report(request):
     if (request.method == 'POST'):
         previous_data = Data.objects.all()
         previous_data.delete()
