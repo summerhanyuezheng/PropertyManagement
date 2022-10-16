@@ -5,7 +5,7 @@ This project contains a web-based data analysis and visualization reporting tool
 On the website, the user is able to upload a pre-defined CSV format file, and the webpage will output the data table as well as bar charts, and pie charts for the data. The website will also execute some calculations based on the given data and output the expenses and income for property Owners on a monthly basis. 
 
 ### Technologies Used
-Django, Pyhton3, HTML, ChartJS, Squlite, Tailwind, VSCode, Pandas
+Django, Pyhton3, HTML, ChartJS, Sqlite, Tailwind, VSCode, Pandas
 
 ### Install Technologies (Mac, Through Terminal)
 If you do not have Python3 installed on your laptop, make sure you do that first : )
@@ -16,7 +16,7 @@ Then start installing the following:
 
 
 ### How to Run the Project(Mac, Terminal)
-1. git clone `git@github.com:summerhanyuezheng/PropertyManagement.git` to the location of your choice
+1. git clone `https://github.com/summerhanyuezheng/PropertyManagement.git` to the location of your choice
 
 2. Activate Virtual Environment: 
   - (Make sure you are in the `PropertyManagement` directory)
