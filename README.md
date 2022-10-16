@@ -20,7 +20,7 @@ Then start installing the following:
 
 2. Activate Virtual Environment: 
   - (Make sure you are in the `PropertyManagement` directory)
-    * `virtualenv env`
+    * `python3 -m venv env`
     * `cd env`
     * `source bin/activate`
 (by now, if you see `(env)` displaying at the beginning of command line, you are on the right track :))
