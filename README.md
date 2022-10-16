@@ -2,7 +2,7 @@
 ### Project Description
 This project contains a web-based data analysis and visualization reporting tool for property management. 
 
-On the website, the user is able to upload a pre-defined CSV format file, and the webpage will output the data table as well as bar charts, and pie charts for the data. The website will also execute some calculations based on the given data and output the expenses and income for property Owens on a monthly basis. 
+On the website, the user is able to upload a pre-defined CSV format file, and the webpage will output the data table as well as bar charts, and pie charts for the data. The website will also execute some calculations based on the given data and output the expenses and income for property Owners on a monthly basis. 
 
 ### Technologies Used
 Django, Pyhton3, HTML, ChartJS, Squlite, Tailwind, VSCode, Pandas
