@@ -1,4 +1,6 @@
 # PropertyManagement
+
+## Video Demo (https://www.youtube.com/watch?v=gyjbsFIzWhw)
 ## Project Description
 This project contains a web-based data analysis and visualization reporting tool for property management. 
 
@@ -44,4 +46,4 @@ Then start installing the following:
  * find the file named `propertySheet` in the cloned folder and drag the file into the `choose File` box on the web page, click submit, all the table and charts should display with given data 
  - (if google chrome does not work when you click on `choosefile` button, try to use Safari)
    
-## Video Demo (https://www.youtube.com/watch?v=gyjbsFIzWhw)
+
